@@ -3,6 +3,7 @@
 
 extern void alertInCelcius(float farenheit);
 extern int GetalertFailureCount(void);
+extern int networkAlertStub(float celcius);
 
 int networkAlert(float celcius)
 {
