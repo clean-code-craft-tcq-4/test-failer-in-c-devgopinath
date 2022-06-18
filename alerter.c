@@ -2,6 +2,7 @@
 #include <assert.h>
 
 extern void test_alerter(void);
+extern int networkAlert(float celcius);
 
 int alertFailureCount = 0;
 
