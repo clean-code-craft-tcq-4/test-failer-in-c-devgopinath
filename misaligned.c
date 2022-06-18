@@ -16,12 +16,13 @@ colorMapStruct ColorMaps[30];
 
 int GetColorMap(colorMapStruct * colorMaps)
 {
-    int i = 0, j = 0;
+    int i = 0, j = 0, index = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            colorMaps.pairNumber = i * 5 + j;
-            colorMaps.pairNumber = majorColor[i];
-            colorMaps.pairNumber = minorColor[i];
+            colorMaps[index].pairNumber = i * 5 + j;
+            colorMaps[index].majorColor = majorColor[i];
+            colorMaps[index].minorColor = minorColor[i];
+            ++index;
         }
     }
     return i * j;
