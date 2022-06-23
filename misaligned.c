@@ -11,7 +11,12 @@ typedef struct
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
-colorMapStruct ColorMaps[30];
+#define MAX_MAJOR_COLORS    (sizeof(majorColor)/sizeof(majorColor[0]))
+#define MAX_MINOR_COLORS    (sizeof(minorColor)/sizeof(minorColor[0]))
+
+#define MAX_COMBINATIONS    (MAX_MAJOR_COLORS * MAX_MINOR_COLORS)
+
+colorMapStruct ColorMaps[MAX_COMBINATIONS];
 
 
 int GetColorMap(colorMapStruct * colorMaps)
@@ -40,11 +45,14 @@ void printColorMap()
 void testColorMap(void)
 {
     int numCombinations = GetColorMap(ColorMaps);
+
+    assert(numCombinations, MAX_COMBINATIONS);
+
     for (int index = 0, pairNumber = 1; index < numCombinations; ++index, ++pairNumber)
     {
         assert(pairNumber == ColorMaps[index].pairNumber);
-        assert(majorColor[index] == ColorMaps[index].majorColor);
-        assert(minorColor[index] == ColorMaps[index].minorColor);
+        assert(majorColor[(index % MAX_MAJOR_COLORS)] == ColorMaps[index].majorColor);
+        assert(minorColor[(index % MAX_MINOR_COLORS)] == ColorMaps[index].minorColor);
     }
     printf("All is well (maybe!)\n");
 }
