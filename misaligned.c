@@ -46,7 +46,7 @@ void testColorMap(void)
 {
     int numCombinations = GetColorMap(ColorMaps);
 
-    assert(numCombinations, MAX_COMBINATIONS);
+    assert(numCombinations == MAX_COMBINATIONS);
 
     for (int index = 0, pairNumber = 1; index < numCombinations; ++index, ++pairNumber)
     {
