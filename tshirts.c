@@ -18,7 +18,7 @@
 #define MIN_SHIRT_SIZE_L    43
 #define MAX_SHIRT_SIZE_L    45
 
-char size(int shirtSizeInCms)
+char getShirtSizeName(int shirtSizeInCms)
 {
     char sizeName = DEFAULT_SIZE_NULL;
 
@@ -46,22 +46,22 @@ char size(int shirtSizeInCms)
 }
 
 int main() {
-    assert(size(33) == DEFAULT_SIZE_NULL);
+    assert(getShirtSizeName(33) == DEFAULT_SIZE_NULL);
     /* classify as SHORT, if length is less than or equal to 38 */
-    assert(size(34) == CLASSIFY_SHIRT_NAME_SHORT);
-    assert(size(37) == CLASSIFY_SHIRT_NAME_SHORT);
-    assert(size(38) == CLASSIFY_SHIRT_NAME_SHORT);
+    assert(getShirtSizeName(34) == CLASSIFY_SHIRT_NAME_SHORT);
+    assert(getShirtSizeName(37) == CLASSIFY_SHIRT_NAME_SHORT);
+    assert(getShirtSizeName(38) == CLASSIFY_SHIRT_NAME_SHORT);
 
     /* classify as MEDIUM, if length is in the range 39-42 */
-    assert(size(39) == CLASSIFY_SHIRT_NAME_MEDIUM);
-    assert(size(42) == CLASSIFY_SHIRT_NAME_MEDIUM);
+    assert(getShirtSizeName(39) == CLASSIFY_SHIRT_NAME_MEDIUM);
+    assert(getShirtSizeName(42) == CLASSIFY_SHIRT_NAME_MEDIUM);
 
     /* classify as LARGE, if length is in the range 43-45 */
-    assert(size(43) == CLASSIFY_SHIRT_NAME_LARGE);
-    assert(size(44) == CLASSIFY_SHIRT_NAME_LARGE);
-    assert(size(45) == CLASSIFY_SHIRT_NAME_LARGE);
+    assert(getShirtSizeName(43) == CLASSIFY_SHIRT_NAME_LARGE);
+    assert(getShirtSizeName(44) == CLASSIFY_SHIRT_NAME_LARGE);
+    assert(getShirtSizeName(45) == CLASSIFY_SHIRT_NAME_LARGE);
 
-    assert(size(46) == DEFAULT_SIZE_NULL);
+    assert(getShirtSizeName(46) == DEFAULT_SIZE_NULL);
 
     printf("All is well (maybe!)\n");
     return 0;
