@@ -13,7 +13,7 @@ jobs:
     - name: tshirts fail
       run: |
         g++ -Wall -Wextra -Werror tshirts.c -o tshirts.out
-        bash .github/workflows/expectfail.sh ./tshirts.out
+        ./tshirts.out
 
     - name: misaligned fail
       run: |
