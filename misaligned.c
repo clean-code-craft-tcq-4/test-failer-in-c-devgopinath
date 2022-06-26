@@ -3,7 +3,7 @@
 
 typedef struct
 {
-    int pairNumber;
+    unsigned int pairNumber;
     const char * majorColor;
     const char * minorColor;
 } colorMapStruct;
@@ -16,14 +16,14 @@ const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
 #define MAX_COMBINATIONS    (MAX_MAJOR_COLORS * MAX_MINOR_COLORS)
 
-int getPairNumber(int majorColorIndex, int minorColorIndex)
+unsigned int getPairNumber(unsigned int majorColorIndex, unsigned int minorColorIndex)
 {
     return (majorColorIndex * 5 + minorColorIndex + 1);
 }
 
-int GetColorMap(colorMapStruct * colorMaps)
+unsigned int GetColorMap(colorMapStruct * colorMaps)
 {
-    int majorColorIndex, minorColorIndex, colorMapIndex;
+    unsigned int majorColorIndex, minorColorIndex, colorMapIndex;
 
     colorMapIndex = 0;
 
@@ -43,9 +43,9 @@ int GetColorMap(colorMapStruct * colorMaps)
 void printColorMap()
 {
     colorMapStruct ColorMaps[MAX_COMBINATIONS];
-    int numCombinations = GetColorMap(ColorMaps);
+    unsigned int numCombinations = GetColorMap(ColorMaps);
 
-    for (int colorMapIndex = 0; colorMapIndex < numCombinations; ++colorMapIndex)
+    for (unsigned int colorMapIndex = 0; colorMapIndex < numCombinations; ++colorMapIndex)
     {
         printf("%d | %s | %s\n", ColorMaps[colorMapIndex].pairNumber, 
                                  ColorMaps[colorMapIndex].majorColor, 
@@ -57,11 +57,11 @@ void testColorMap(void)
 {
     colorMapStruct ColorMaps[MAX_COMBINATIONS];
 
-    int numCombinations = GetColorMap(ColorMaps);
+    unsigned int numCombinations = GetColorMap(ColorMaps);
 
     assert(numCombinations == MAX_COMBINATIONS);
 
-    for (int colorMapIndex = 0, pairNumber = 1; colorMapIndex < numCombinations; ++colorMapIndex, ++pairNumber)
+    for (unsigned int colorMapIndex = 0, pairNumber = 1; colorMapIndex < numCombinations; ++colorMapIndex, ++pairNumber)
     {
         assert(pairNumber == ColorMaps[colorMapIndex].pairNumber);
         assert(majorColor[(colorMapIndex % MAX_MAJOR_COLORS)] == ColorMaps[colorMapIndex].majorColor);
