@@ -70,7 +70,7 @@ void testColorMap(void)
         printf("%d ", ColorMaps[colorMapIndex].pairNumber);
         printf("%s ", majorColor[(colorMapIndex / MAX_MAJOR_COLORS)]);
         printf("%s ", ColorMaps[colorMapIndex].majorColor);
-        printf("%s ", minorColor[(colorMapIndex / MAX_MINOR_COLORS)]);
+        printf("%s ", minorColor[(colorMapIndex % MAX_MINOR_COLORS)]);
         printf("%s", ColorMaps[colorMapIndex].minorColor);
 
         // assert(pairNumber == ColorMaps[colorMapIndex].pairNumber);
