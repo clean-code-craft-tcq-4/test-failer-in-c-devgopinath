@@ -72,6 +72,8 @@ void testColorMap(void)
 
 int main()
 {
+    assert(majorColor[0] == majorColor[0]);
+
     printColorMap();
     testColorMap();
     return 0;
