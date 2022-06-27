@@ -70,7 +70,7 @@ int getMaxMajorColorStrLength(void)
 int getMaxPairNumberStrLength(void)
 {
     char buffer[10];
-    sprintf(buffer, "%d", (MAX_COMBINATIONS));
+    sprintf(buffer, "%d", (int)(MAX_COMBINATIONS));
     return (strlen(buffer));
 }
 
