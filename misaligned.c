@@ -133,8 +133,8 @@ void testColorMap(void)
         assert(minorColor[(colorMapIndex % MAX_MINOR_COLORS)] == ColorMaps[colorMapIndex].minorColor);
     }
     
-    assert(getColorCodeAlignedString(6, "Red", "Blue") == "6  | Red    | Blue");
-    assert(getColorCodeAlignedString(17, "Yellow", "Orange") == "17 | Yellow | Orange");
+    assert(strcmp(getColorCodeAlignedString(6, "Red", "Blue") == "6  | Red    | Blue") == 0);
+    assert(strcmp(getColorCodeAlignedString(17, "Yellow", "Orange") == "17 | Yellow | Orange") == 0);
 
     printf("All is well (maybe!)\n");
 }
