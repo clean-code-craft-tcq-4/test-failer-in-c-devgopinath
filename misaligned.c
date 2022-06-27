@@ -73,6 +73,6 @@ void testColorMap(void)
 int main()
 {
     printColorMap();
-    // testColorMap();
+    testColorMap();
     return 0;
 }
