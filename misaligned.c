@@ -68,14 +68,14 @@ void testColorMap(void)
         printf("\n");
         printf("%d ", pairNumber);
         printf("%d ", ColorMaps[colorMapIndex].pairNumber);
-        printf("%s ", majorColor[(colorMapIndex % maxMajorColors)]);
+        printf("%s ", majorColor[(colorMapIndex / maxMajorColors)]);
         printf("%s ", ColorMaps[colorMapIndex].majorColor);
-        printf("%s ", minorColor[(colorMapIndex % maxMinorColors)]);
+        printf("%s ", minorColor[(colorMapIndex / maxMinorColors)]);
         printf("%s", ColorMaps[colorMapIndex].minorColor);
 
         // assert(pairNumber == ColorMaps[colorMapIndex].pairNumber);
-        // assert(majorColor[(colorMapIndex % maxMajorColors)] == ColorMaps[colorMapIndex].majorColor);
-        // assert(minorColor[(colorMapIndex % maxMinorColors)] == ColorMaps[colorMapIndex].minorColor);
+        // assert(majorColor[(colorMapIndex / maxMajorColors)] == ColorMaps[colorMapIndex].majorColor);
+        // assert(minorColor[(colorMapIndex / maxMinorColors)] == ColorMaps[colorMapIndex].minorColor);
     }
     printf("All is well (maybe!)\n");
 }
