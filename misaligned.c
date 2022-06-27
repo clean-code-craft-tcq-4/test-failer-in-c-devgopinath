@@ -57,7 +57,7 @@ int getMaxMajorColorStrLength(void)
 {
     int maxLength = 0;
     int length;
-    for (int index = 0; index < MAX_MAJOR_COLORS; ++index)
+    for (int index = 0; index < (int)(MAX_MAJOR_COLORS); ++index)
     {
         length = strlen(majorColor[index]);
         if (length > maxLength)
