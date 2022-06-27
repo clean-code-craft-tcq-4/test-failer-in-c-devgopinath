@@ -75,6 +75,6 @@ int main()
     assert(majorColor[0] == majorColor[0]);
 
     printColorMap();
-    testColorMap();
+    // testColorMap();
     return 0;
 }
