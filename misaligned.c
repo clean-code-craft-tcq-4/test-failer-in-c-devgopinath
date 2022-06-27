@@ -121,6 +121,7 @@ void printColorMap()
 void testColorMap(void)
 {
     colorMapStruct ColorMaps[MAX_COMBINATIONS];
+    char alignedString[25];
 
     unsigned int numCombinations = GetColorMap(ColorMaps);
 
@@ -133,8 +134,10 @@ void testColorMap(void)
         assert(minorColor[(colorMapIndex % MAX_MINOR_COLORS)] == ColorMaps[colorMapIndex].minorColor);
     }
     
-    assert(strcmp(getColorCodeAlignedString(6, "Red", "Blue") == "6  | Red    | Blue") == 0);
-    assert(strcmp(getColorCodeAlignedString(17, "Yellow", "Orange") == "17 | Yellow | Orange") == 0);
+    getColorCodeAlignedString(6, "Red", "Blue", alignedString);
+    assert(strcmp(alignedString == "6  | Red    | Blue") == 0);
+    getColorCodeAlignedString(6, "Red", "Blue", alignedString);
+    assert(strcmp(alignedString == "17 | Yellow | Orange") == 0);
 
     printf("All is well (maybe!)\n");
 }
