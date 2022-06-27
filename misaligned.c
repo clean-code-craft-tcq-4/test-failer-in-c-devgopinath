@@ -58,22 +58,24 @@ void testColorMap(void)
     colorMapStruct ColorMaps[MAX_COMBINATIONS];
 
     unsigned int numCombinations = GetColorMap(ColorMaps);
+    int maxMajorColors = MAX_MAJOR_COLORS;
+    int maxMinorColors = MAX_MINOR_COLORS;
 
     assert(numCombinations == MAX_COMBINATIONS);
 
     for (unsigned int colorMapIndex = 0, pairNumber = 1; colorMapIndex < numCombinations; ++colorMapIndex, ++pairNumber)
     {
         printf("\n");
-        printf("%d", pairNumber);
-        printf("%d", ColorMaps[colorMapIndex].pairNumber);
-        printf("%s", majorColor[(colorMapIndex % MAX_MAJOR_COLORS)]);
-        printf("%s", ColorMaps[colorMapIndex].majorColor);
-        printf("%s", minorColor[(colorMapIndex % MAX_MAJOR_COLORS)]);
+        printf("%d ", pairNumber);
+        printf("%d ", ColorMaps[colorMapIndex].pairNumber);
+        printf("%s ", majorColor[(colorMapIndex % maxMajorColors)]);
+        printf("%s ", ColorMaps[colorMapIndex].majorColor);
+        printf("%s ", minorColor[(colorMapIndex % maxMinorColors)]);
         printf("%s", ColorMaps[colorMapIndex].minorColor);
 
         assert(pairNumber == ColorMaps[colorMapIndex].pairNumber);
-        assert(majorColor[(colorMapIndex % MAX_MAJOR_COLORS)] == ColorMaps[colorMapIndex].majorColor);
-        assert(minorColor[(colorMapIndex % MAX_MINOR_COLORS)] == ColorMaps[colorMapIndex].minorColor);
+        assert(majorColor[(colorMapIndex % maxMajorColors)] == ColorMaps[colorMapIndex].majorColor);
+        assert(minorColor[(colorMapIndex % maxMinorColors)] == ColorMaps[colorMapIndex].minorColor);
     }
     printf("All is well (maybe!)\n");
 }
