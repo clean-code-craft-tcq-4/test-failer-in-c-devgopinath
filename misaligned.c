@@ -135,9 +135,9 @@ void testColorMap(void)
     }
     
     getColorCodeAlignedString(6, "Red", "Blue", alignedString);
-    assert(strcmp(alignedString == "6  | Red    | Blue") == 0);
-    getColorCodeAlignedString(6, "Red", "Blue", alignedString);
-    assert(strcmp(alignedString == "17 | Yellow | Orange") == 0);
+    assert(strcmp(alignedString, "6  | Red    | Blue") == 0);
+    getColorCodeAlignedString(17, "Yellow", "Orange", alignedString);
+    assert(strcmp(alignedString, "17 | Yellow | Orange") == 0);
 
     printf("All is well (maybe!)\n");
 }
