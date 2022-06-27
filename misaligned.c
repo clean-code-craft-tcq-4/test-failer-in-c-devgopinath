@@ -65,7 +65,7 @@ void testColorMap(void)
     {
         printf("\n");
         printf("%d", pairNumber);
-        printf("%s", ColorMaps[colorMapIndex].pairNumber);
+        printf("%d", ColorMaps[colorMapIndex].pairNumber);
         printf("%s", majorColor[(colorMapIndex % MAX_MAJOR_COLORS)]);
         printf("%s", ColorMaps[colorMapIndex].majorColor);
         printf("%s", minorColor[(colorMapIndex % MAX_MAJOR_COLORS)]);
