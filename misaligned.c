@@ -63,6 +63,14 @@ void testColorMap(void)
 
     for (unsigned int colorMapIndex = 0, pairNumber = 1; colorMapIndex < numCombinations; ++colorMapIndex, ++pairNumber)
     {
+        printf("\n");
+        printf("%d", pairNumber);
+        printf("%s", ColorMaps[colorMapIndex].pairNumber);
+        printf("%s", majorColor[(colorMapIndex % MAX_MAJOR_COLORS)]);
+        printf("%s", ColorMaps[colorMapIndex].majorColor);
+        printf("%s", minorColor[(colorMapIndex % MAX_MAJOR_COLORS)]);
+        printf("%s", ColorMaps[colorMapIndex].minorColor);
+
         assert(pairNumber == ColorMaps[colorMapIndex].pairNumber);
         assert(majorColor[(colorMapIndex % MAX_MAJOR_COLORS)] == ColorMaps[colorMapIndex].majorColor);
         assert(minorColor[(colorMapIndex % MAX_MINOR_COLORS)] == ColorMaps[colorMapIndex].minorColor);
@@ -72,9 +80,7 @@ void testColorMap(void)
 
 int main()
 {
-    assert(majorColor[0] == majorColor[0]);
-
     printColorMap();
-    // testColorMap();
+    testColorMap();
     return 0;
 }
