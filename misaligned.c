@@ -85,10 +85,15 @@ void addSpaces(char * str, int expectedStringLength)
     }
 }
 
+void appendInteger(char * str, int number)
+{
+    sprintf(str, "%d", number);
+}
+
 void getColorCodeAlignedString(int pairNumber, const char * majorColor, const char * minorColor, char * alignedString)
 {
     strcpy(alignedString, EMPTY_STRING);
-    strcat(alignedString, pairNumber);
+    appendInteger(alignedString, pairNumber);
     addSpaces(alignedString, EXPECTED_STR_LENGTH_AFTER_PAIR_NUMBER);
     strcat(alignedString, SEPARATOR_STRING);
     strcat(alignedString, majorColor);
