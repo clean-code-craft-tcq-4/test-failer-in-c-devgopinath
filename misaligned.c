@@ -58,8 +58,8 @@ void testColorMap(void)
     colorMapStruct ColorMaps[MAX_COMBINATIONS];
 
     unsigned int numCombinations = GetColorMap(ColorMaps);
-    int maxMajorColors = MAX_MAJOR_COLORS;
-    int maxMinorColors = MAX_MINOR_COLORS;
+    // int maxMajorColors = MAX_MAJOR_COLORS;
+    // int maxMinorColors = MAX_MINOR_COLORS;
 
     assert(numCombinations == MAX_COMBINATIONS);
 
